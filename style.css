@@ -50,6 +50,7 @@ nav {
 .buttons {
   flex-grow: 1;
   text-align: right;
+  display: flex;
 }
 
 .btn-1 {
