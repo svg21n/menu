@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+
+body {
+  font-family: 'Montserrat', serif;
+  color: #1f373d;
+}
+
+header {
+  width: 1024px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 35px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: #1f373d;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+nav {
+  flex-grow: 3;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-item-link,
+.buttons {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.buttons {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.btn-1 {
+  background: none;
+  border: none;
+  padding: 0 20px;
+  transition: opacity 0.3s;
+}
+
+.btn-2 {
+  background-color: #ffcc01;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 6px;
+  transition: opacity 0.3s;
+}
+
+.btn-1:hover,
+.btn-2:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+label {
+  display: none;
+}
+
+@media screen and (max-width: 678px) {
+  nav {
+    order: 1;
+  }
+
+  label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-left: auto;
+  }
+
+  .mobile::before,
+  .mobile::after,
+  .mobile {
+    content: " ";
+    display: block;
+    width: 25px;
+    height: 5px;
+    background-color: #333;
+    position: absolute;
+    right: 0;
+    transition: 0.3s;
+  }
+
+  .mobile {
+    top: 15px;
+  }
+
+  .mobile::after {
+    top: 8px;
+  }
+
+  .mobile::before {
+    top: -8px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  label:hover {
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:checked~.menu {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  input[type="checkbox"]:checked~.mobile {
+    transform: rotate(-45deg);
+  }
+
+  input[type="checkbox"]:checked~.mobile::before {
+    transform: rotate(0deg);
+  }
+
+  input[type="checkbox"]:checked~.mobile::after {
+    transform: rotate(90deg);
+  }
+
+  .menu {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 12px 8px #ececec;
+  }
+
+  .menu-item {
+    margin: 15px 0;
+  }
+}
